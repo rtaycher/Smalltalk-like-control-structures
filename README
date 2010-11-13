@@ -1,0 +1,9 @@
+A small Extension Method Library allowing Smalltalk like
+if/else control structures as well as 
+timesRepeat(call function x times)
+
+Written to prove something on a thread on the Internet
+(probably read by at least 2 people).
+
+
+

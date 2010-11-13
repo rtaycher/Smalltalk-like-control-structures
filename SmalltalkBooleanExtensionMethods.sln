@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmalltalkBooleanExtensionMethods", "SmalltalkBooleanExtensionMethods\SmalltalkBooleanExtensionMethods.csproj", "{F9C1DBF3-D338-4AF4-8919-8D0BE0BCC083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmalltalkBooleanExtensionMethodsTest", "SmalltalkBooleanExtensionMethodsTest\SmalltalkBooleanExtensionMethodsTest.csproj", "{66B1BEA6-5EAC-465D-9C9D-8A40E4D0EACC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66B1BEA6-5EAC-465D-9C9D-8A40E4D0EACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B1BEA6-5EAC-465D-9C9D-8A40E4D0EACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66B1BEA6-5EAC-465D-9C9D-8A40E4D0EACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B1BEA6-5EAC-465D-9C9D-8A40E4D0EACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C1DBF3-D338-4AF4-8919-8D0BE0BCC083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C1DBF3-D338-4AF4-8919-8D0BE0BCC083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C1DBF3-D338-4AF4-8919-8D0BE0BCC083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C1DBF3-D338-4AF4-8919-8D0BE0BCC083}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SmalltalkBooleanExtensionMethods\SmalltalkBooleanExtensionMethods.csproj
+	EndGlobalSection
+EndGlobal
