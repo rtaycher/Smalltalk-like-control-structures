@@ -22,25 +22,25 @@ namespace SmalltalkBooleanExtensionMethodsTest
 		[Test()]
 		public void TestifTrue ()
 		{
-			
-			itWorks = (bool) (true.ifTrue (() => true));
+
+			itWorks = (true.ifTrue (() => true));
 			Assert.IsTrue (itWorks);
 		}
 
 		[Test()]
 		public void TestifFalse ()
 		{
-			itWorks = (bool)(false.ifFalse (() => true));
+			itWorks = (false.ifFalse (() => true));
 			Assert.IsTrue (itWorks);
 		}
 
 		[Test()]
 		public void TestifTrueifFalse ()
 		{
-			itWorks = (bool)false.ifTrueifFalse (() => false, () => true);
+			itWorks = false.ifTrueifFalse (() => false, () => true);
 			Assert.IsTrue (itWorks);
 			itWorks = false;
-			itWorks = (bool)true.ifTrueifFalse (() => true, () => false);
+			itWorks = true.ifTrueifFalse (() => true, () => false);
 			Assert.IsTrue (itWorks);
 		}
 
@@ -48,13 +48,13 @@ namespace SmalltalkBooleanExtensionMethodsTest
 		public void TestTimesRepeat ()
 		{
 			(5).timesRepeat (() => i = i + 1);
-			Assert.AreEqual(i, 5);
+			Assert.AreEqual (i, 5);
 		}
 
 		[Test()]
 		public void TestVoidMethodIfTrue ()
 		{
-			
+
 			true.ifTrue (() => SetItWorksBooleanToTrue ());
 			Assert.IsTrue (itWorks);
 		}
@@ -62,7 +62,7 @@ namespace SmalltalkBooleanExtensionMethodsTest
 		[Test()]
 		public void TestVoidMethodIfFalse ()
 		{
-			
+
 			false.ifFalse (() => SetItWorksBooleanToTrue ());
 			Assert.IsTrue (itWorks);
 		}
@@ -72,7 +72,7 @@ namespace SmalltalkBooleanExtensionMethodsTest
 			true.ifTrueifFalse (() => SetItWorksBooleanToTrue (), () => SetItWorksBooleanToFalse ());
 			false.ifTrueifFalse (() => SetItWorksBooleanToFalse (), () => SetItWorksBooleanToTrue ());
 			Assert.IsTrue (itWorks);
-			
+
 		}
 
 		public void TestVoidMethodTimesRepeat ()
@@ -96,6 +96,6 @@ namespace SmalltalkBooleanExtensionMethodsTest
 			i = i + 1;
 		}
 	}
-	
+
 }
 

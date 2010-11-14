@@ -2,63 +2,55 @@ using System;
 namespace SmalltalkBooleanExtensionMethods
 {
 
-
-		public static class BooleanExtension
+	public static class BooleanExtension
+	{
+		public static T ifTrue<T> (this bool aBoolean, Func<T> method)
 		{
-			public delegate Object ClosureWithNoExtraArgs ();
-			public delegate void ActionClosureWithNoExtraArgs ();
-
-			public static Object ifTrue (this bool aBoolen, ClosureWithNoExtraArgs method)
-			{
-				if (aBoolen)
-					return method.DynamicInvoke ();
-				else
-					return null;
-			}
-
-			public static Object ifTrue (this bool aBoolen, ActionClosureWithNoExtraArgs method)
-			{
-				if (aBoolen)
-					return method.DynamicInvoke ();
-				else
-					return null;
-			}
-
-
-			public static Object ifFalse (this bool aBoolen, ClosureWithNoExtraArgs method)
-			{
-				if (!aBoolen)
-					return method.DynamicInvoke ();
-				else
-					return null;
-			}
-
-			public static Object ifFalse (this bool aBoolen, ActionClosureWithNoExtraArgs method)
-			{
-				if (!aBoolen)
-					return method.DynamicInvoke ();
-				else
-					return null;
-			}
-
-
-			public static Object ifTrueifFalse (this Boolean aBoolen, ClosureWithNoExtraArgs methodA, ClosureWithNoExtraArgs methodB)
-			{
-				if (aBoolen)
-					return methodA.DynamicInvoke ();
-				else
-					return methodB.DynamicInvoke ();
-			}
-
-			public static Object ifTrueifFalse (this Boolean aBoolen, ActionClosureWithNoExtraArgs methodA, ActionClosureWithNoExtraArgs methodB)
-			{
-				if (aBoolen)
-					return methodA.DynamicInvoke ();
-				else
-					return methodB.DynamicInvoke ();
-			}
-			
+			if (aBoolean)
+				return (T)method.DynamicInvoke ();
+			else
+				return default(T);
 		}
-	
 
+		public static void ifTrue (this bool aBoolean, Action method)
+		{
+			if (aBoolean)
+				method.DynamicInvoke ();
+		}
+
+
+		public static T ifFalse<T> (this bool aBoolean, Func<T> method)
+		{
+			if (!aBoolean)
+				return (T)method.DynamicInvoke ();
+			else
+				return default(T);
+		}
+
+		public static void ifFalse (this bool aBoolean, Action method)
+		{
+			if (!aBoolean)
+				method.DynamicInvoke ();
+		}
+
+
+		public static T ifTrueifFalse<T> (this Boolean aBoolean, Func<T> methodA, Func<T> methodB)
+		{
+			if (aBoolean)
+				return (T)methodA.DynamicInvoke ();
+			else
+				return (T)methodB.DynamicInvoke ();
+		}
+
+		public static void ifTrueifFalse (this Boolean aBoolean, Action methodA, Action methodB)
+		{
+			if (aBoolean)
+				methodA.DynamicInvoke ();
+			else
+				methodB.DynamicInvoke ();
+		}
+		
+	}
+	
+	
 }
