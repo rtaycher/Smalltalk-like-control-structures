@@ -55,3 +55,9 @@ stylecop.*
 ~$*
 *.dbmdl%
 
+#monodevelop
+*.userprefs
+
+#nunit
+**/TestResult*.xml
+test-results/**
