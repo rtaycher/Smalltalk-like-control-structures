@@ -4,10 +4,8 @@ namespace SmalltalkBooleanExtensionMethods
 
 	public static class IntExtension
 	{
-		public delegate Object ClosureWithNoExtraArgs ();
-		public delegate void ActionClosureWithNoExtraArgs ();
 
-		public static int timesRepeat (this int x, ClosureWithNoExtraArgs method)
+		public static int timesRepeat<T> (this int x, Func<T> method)
 		{
 			for (int i = x; i > 0; i--) {
 				method.DynamicInvoke ();
@@ -15,7 +13,7 @@ namespace SmalltalkBooleanExtensionMethods
 			return x;
 		}
 
-		public static int timesRepeat (this int x, ActionClosureWithNoExtraArgs method)
+		public static int timesRepeat (this int x, Action method)
 		{
 			for (int i = x; i > 0; i--) {
 				method.DynamicInvoke ();
