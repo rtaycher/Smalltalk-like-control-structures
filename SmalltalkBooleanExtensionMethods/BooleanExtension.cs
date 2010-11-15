@@ -7,7 +7,7 @@ namespace SmalltalkBooleanExtensionMethods
 		public static T ifTrue<T> (this bool aBoolean, Func<T> method)
 		{
 			if (aBoolean)
-				return (T)method.DynamicInvoke ();
+				return (T)method();
 			else
 				return default(T);
 		}
@@ -15,14 +15,14 @@ namespace SmalltalkBooleanExtensionMethods
 		public static void ifTrue (this bool aBoolean, Action method)
 		{
 			if (aBoolean)
-				method.DynamicInvoke ();
+				method();
 		}
 
 
 		public static T ifFalse<T> (this bool aBoolean, Func<T> method)
 		{
 			if (!aBoolean)
-				return (T)method.DynamicInvoke ();
+				return (T)method();
 			else
 				return default(T);
 		}
@@ -30,24 +30,24 @@ namespace SmalltalkBooleanExtensionMethods
 		public static void ifFalse (this bool aBoolean, Action method)
 		{
 			if (!aBoolean)
-				method.DynamicInvoke ();
+				method();
 		}
 
 
 		public static T ifTrueifFalse<T> (this Boolean aBoolean, Func<T> methodA, Func<T> methodB)
 		{
 			if (aBoolean)
-				return (T)methodA.DynamicInvoke ();
+				return (T)methodA();
 			else
-				return (T)methodB.DynamicInvoke ();
+				return (T)methodB();
 		}
 
 		public static void ifTrueifFalse (this Boolean aBoolean, Action methodA, Action methodB)
 		{
 			if (aBoolean)
-				methodA.DynamicInvoke ();
+				methodA();
 			else
-				methodB.DynamicInvoke ();
+				methodB();
 		}
 		
 	}
